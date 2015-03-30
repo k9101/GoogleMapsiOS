@@ -17,18 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_me" translatesAutoresizingMaskIntoConstraints="NO" id="Zk1-KE-lC0">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RY-CU-e8k" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.84560448232323226" green="0.84560448232323226" blue="0.84560448232323226" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_me" translatesAutoresizingMaskIntoConstraints="NO" id="Zk1-KE-lC0">
                                 <rect key="frame" x="285" y="245" width="30" height="55"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="Zk1-KE-lC0" secondAttribute="bottom" id="2Re-av-h44"/>
+                            <constraint firstItem="4RY-CU-e8k" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="46V-sg-anP"/>
+                            <constraint firstItem="4RY-CU-e8k" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="521-DX-8SU"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="4RY-CU-e8k" secondAttribute="bottom" id="OdH-7E-YoL"/>
                             <constraint firstAttribute="centerX" secondItem="Zk1-KE-lC0" secondAttribute="centerX" id="eEV-hM-eKB"/>
+                            <constraint firstAttribute="trailing" secondItem="4RY-CU-e8k" secondAttribute="trailing" id="pqu-9k-abm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Hq-pz-3QM">
                         <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ZA6-VJ-27p">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Normal"/>
+                                <segment title="Satellite"/>
+                                <segment title="Hybrid"/>
+                            </segments>
+                            <connections>
+                                <action selector="mapTypeSegmentPressed:" destination="vXZ-lx-hvc" eventType="valueChanged" id="wkr-cq-Z6G"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="Y8r-sI-zD8">
                             <connections>
                                 <segue destination="gRK-9k-5jK" kind="presentation" identifier="Types Segue" id="Glz-Sc-CwV"/>
@@ -37,6 +57,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapCenterPinImage" destination="Zk1-KE-lC0" id="Dfo-xZ-1yc"/>
+                        <outlet property="mapView" destination="4RY-CU-e8k" id="3sf-JL-myg"/>
                         <outlet property="pinImageVerticalConstraint" destination="2Re-av-h44" id="KIp-HD-OAI"/>
                     </connections>
                 </viewController>
