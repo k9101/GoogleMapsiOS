@@ -21,6 +21,13 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" red="0.84560448232323226" green="0.84560448232323226" blue="0.84560448232323226" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDB-eY-7gB">
+                                <rect key="frame" x="0.0" y="579.5" width="600" height="20.5"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.79000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_me" translatesAutoresizingMaskIntoConstraints="NO" id="Zk1-KE-lC0">
                                 <rect key="frame" x="285" y="245" width="30" height="55"/>
                             </imageView>
@@ -31,7 +38,10 @@
                             <constraint firstItem="4RY-CU-e8k" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="46V-sg-anP"/>
                             <constraint firstItem="4RY-CU-e8k" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="521-DX-8SU"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="4RY-CU-e8k" secondAttribute="bottom" id="OdH-7E-YoL"/>
+                            <constraint firstAttribute="trailing" secondItem="SDB-eY-7gB" secondAttribute="trailing" id="RYn-D4-myE"/>
+                            <constraint firstItem="SDB-eY-7gB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="aHZ-jP-jJr"/>
                             <constraint firstAttribute="centerX" secondItem="Zk1-KE-lC0" secondAttribute="centerX" id="eEV-hM-eKB"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="SDB-eY-7gB" secondAttribute="bottom" id="eee-oj-mIy"/>
                             <constraint firstAttribute="trailing" secondItem="4RY-CU-e8k" secondAttribute="trailing" id="pqu-9k-abm"/>
                         </constraints>
                     </view>
@@ -56,6 +66,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addressLabel" destination="SDB-eY-7gB" id="4XN-jI-e6D"/>
                         <outlet property="mapCenterPinImage" destination="Zk1-KE-lC0" id="Dfo-xZ-1yc"/>
                         <outlet property="mapView" destination="4RY-CU-e8k" id="3sf-JL-myg"/>
                         <outlet property="pinImageVerticalConstraint" destination="2Re-av-h44" id="KIp-HD-OAI"/>
@@ -63,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983" y="797"/>
+            <point key="canvasLocation" x="957" y="797"/>
         </scene>
         <!--Choose Types-->
         <scene sceneID="gir-OY-7YJ">
